@@ -30,13 +30,13 @@
 ### 請在 pgAdmin 建立名為 todo_db 的資料庫
 ### 然後執行以下 SQL 建立資料表與欄位：  
 
-```sql```
-CREATE TABLE tasks (<br>
+
+`CREATE TABLE tasks (<br>
     id SERIAL PRIMARY KEY,<br>
     title TEXT NOT NULL,<br>
     done BOOLEAN DEFAULT FALSE,<br>
     is_deleted BOOLEAN DEFAULT FALSE<br>
-);
+);`
 
 ### 3. 啟動應用程式
 `export FLASK_APP=app.py`
