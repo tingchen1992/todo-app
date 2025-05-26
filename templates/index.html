@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <title>我的待辦清單</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>📋 我的待辦清單</h1>
+
+    <div class="filter">
+        <a href="{{ url_for('index', filter_status='all') }}" class="{% if filter_status == 'all' %}active{% endif %}">全部</a>
+        <a href="{{ url_for('index', filter_status='pending') }}" class="{% if filter_status == 'pending' %}active{% endif %}">未完成</a>
+        <a href="{{ url_for('index', filter_status='completed') }}" class="{% if filter_status == 'completed' %}active{% endif %}">已完成</a>
+    </div>
+
+    <form action="{{ url_for('add_task') }}" method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.title(size=30, placeholder="輸入新任務") }}
+        {{ form.submit() }}
+        {% for error in form.title.errors %}
+            <div class="error">{{ error }}</div>
+        {% endfor %}
+    </form>
+
+    <ul>
+        {% for task in tasks %}
+            <li class="{% if task.done %}done{% endif %}">
+                {{ task.title }}
+                <span>
+                    {% if not task.done %}
+                        <a href="{{ url_for('complete_task', task_id=task.id) }}">完成</a>
+                    {% endif %}
+                    <a href="{{ url_for('delete_task', task_id=task.id) }}">刪除</a>
+                </span>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
