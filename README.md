@@ -39,7 +39,7 @@ CREATE TABLE tasks (
     done BOOLEAN DEFAULT FALSE,
     is_deleted BOOLEAN DEFAULT FALSE
 );
-
+```
 ### 3. 啟動應用程式
 
 `export FLASK_APP=app.py`
