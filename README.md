@@ -45,7 +45,7 @@ CREATE TABLE tasks (
 ```bash
    python -m flask run
    ```
-   啟動後請打開瀏覽器，訪問 [http://localhost:5000](http://localhost:5000)。
+   啟動後請打開瀏覽器，訪問 [[http://127.0.0.1:5000](http://127.0.0.1:5000))。
 
 ──────────────
 
