@@ -21,25 +21,25 @@
 
 ### 1. 建立虛擬環境並安裝套件
 
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+`python3 -m venv venv`
+`source venv/bin/activate`
+`pip install -r requirements.txt`
 
 ### 2. 建立資料庫（PostgreSQL）
 
 請在 pgAdmin 建立名為 todo_db 的資料庫，然後執行以下 SQL 建立資料表與欄位：
 
-CREATE TABLE tasks (
+`CREATE TABLE tasks (
     id SERIAL PRIMARY KEY,
     title TEXT NOT NULL,
     done BOOLEAN DEFAULT FALSE,
     is_deleted BOOLEAN DEFAULT FALSE
-);
+);`
 
 ### 3. 啟動應用程式
 
-export FLASK_APP=app.py
-flask run
+`export FLASK_APP=app.py`
+`flask run`
 
 ──────────────
 
