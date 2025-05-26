@@ -21,7 +21,7 @@
 
 ### 1. 建立虛擬環境並安裝套件
 
-`python3 -m venv venv`
+`python3.13 -m venv venv`
 
 `source venv/bin/activate`
 
@@ -42,9 +42,10 @@ CREATE TABLE tasks (
 ```
 ### 3. 啟動應用程式
 
-`export FLASK_APP=app.py`
-
-`flask run`
+```bash
+   python -m flask run
+   ```
+   啟動後請打開瀏覽器，訪問 [http://localhost:5000](http://localhost:5000)。
 
 ──────────────
 
